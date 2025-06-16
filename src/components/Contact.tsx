@@ -29,14 +29,14 @@ const Contact: React.FC = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: t('contact.phone'),
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
+      value: '+91 9966 666391',
+      href: 'tel:+919966666391',
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: t('contact.email'),
-      value: 'murari.sharma@example.com',
-      href: 'mailto:murari.sharma@example.com',
+      value: 'murarimady@gmail.com',
+      href: 'mailto:murarimady@gmail.com',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
