@@ -103,7 +103,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.name': 'మురారి శర్మ',
-    'hero.title': 'హిందూ పూజారి & వైదిక విద్వాన్',
+    'hero.title': 'వేద బ్రాహ్మణుడు & వైదిక విద్వాన్',
     'hero.subtitle': 'సనాతన ధర్మం యొక్క పవిత్ర సంప్రదాయాలను పరిరక్షించడానికి మరియు పంచుకోవడానికి అంకితమై',
     
     // About Section
