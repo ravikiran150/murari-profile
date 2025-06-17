@@ -1,29 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const contactInfo = [
     {
@@ -166,86 +146,163 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Testimonials Section */}
           <div>
             <h3 className={`text-2xl font-bold text-gray-900 dark:text-white mb-8 ${
               language === 'te' ? 'font-telugu' : ''
             }`}>
-              {language === 'en' ? 'Send a Message' : 'సందేశం పంపండి'}
+              {language === 'en' ? 'Client Testimonials' : 'క్లయింట్ సాక్ష్యాలు'}
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label 
-                  htmlFor="name" 
-                  className={`block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ${
-                    language === 'te' ? 'font-telugu' : ''
-                  }`}
-                >
-                  {language === 'en' ? 'Name' : 'పేరు'}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                  placeholder={language === 'en' ? 'Your name' : 'మీ పేరు'}
-                />
+            <div className="space-y-6">
+              {/* Testimonial 1 */}
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center mb-2">
+                      <h4 className={`text-lg font-semibold text-gray-900 dark:text-white ${
+                        language === 'te' ? 'font-telugu' : ''
+                      }`}>
+                        {language === 'en' ? 'Priya Sharma' : 'ప్రియ శర్మ'}
+                      </h4>
+                      <div className="flex ml-2">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className={`text-gray-600 dark:text-gray-300 italic ${
+                      language === 'te' ? 'font-telugu' : ''
+                    }`}>
+                      {language === 'en' 
+                        ? '"Murari Sharma\'s astrological guidance completely transformed my life. His predictions were incredibly accurate and his remedies worked wonders. Highly recommended!"'
+                        : '"మురారి శర్మ గారి జ్యోతిష్య మార్గదర్శకత్వం నా జీవితాన్ని పూర్తిగా మార్చివేసింది. ఆయన ఊహలు చాలా ఖచ్చితంగా ఉన్నాయి మరియు ఆయన ఉపాయాలు అద్భుతంగా పనిచేశాయి. ఎంతో సిఫార్సు చేస్తున్నాను!"'
+                      }
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <div>
-                <label 
-                  htmlFor="email" 
-                  className={`block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ${
-                    language === 'te' ? 'font-telugu' : ''
-                  }`}
-                >
-                  {language === 'en' ? 'Email' : 'ఇమెయిల్'}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                  placeholder={language === 'en' ? 'Your email' : 'మీ ఇమెయిల్'}
-                />
+
+              {/* Testimonial 2 */}
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center mb-2">
+                      <h4 className={`text-lg font-semibold text-gray-900 dark:text-white ${
+                        language === 'te' ? 'font-telugu' : ''
+                      }`}>
+                        {language === 'en' ? 'Rajesh Kumar' : 'రాజేష్ కుమార్'}
+                      </h4>
+                      <div className="flex ml-2">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className={`text-gray-600 dark:text-gray-300 italic ${
+                      language === 'te' ? 'font-telugu' : ''
+                    }`}>
+                      {language === 'en' 
+                        ? '"I was going through a difficult phase in my career. Murari ji\'s consultation helped me understand the planetary influences and his remedies brought positive changes."'
+                        : '"నేను నా వృత్తిలో కష్టమైన దశలో ఉన్నాను. మురారి గారి సంప్రదింపు గ్రహ ప్రభావాలను అర్థం చేసుకోవడానికి సహాయపడింది మరియు ఆయన ఉపాయాలు సానుకూల మార్పులను తీసుకువచ్చాయి."'
+                      }
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <div>
-                <label 
-                  htmlFor="message" 
-                  className={`block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ${
-                    language === 'te' ? 'font-telugu' : ''
-                  }`}
-                >
-                  {language === 'en' ? 'Message' : 'సందేశం'}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                  placeholder={language === 'en' ? 'Your message' : 'మీ సందేశం'}
-                />
+
+              {/* Testimonial 3 */}
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center mb-2">
+                      <h4 className={`text-lg font-semibold text-gray-900 dark:text-white ${
+                        language === 'te' ? 'font-telugu' : ''
+                      }`}>
+                        {language === 'en' ? 'Lakshmi Devi' : 'లక్ష్మీ దేవి'}
+                      </h4>
+                      <div className="flex ml-2">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className={`text-gray-600 dark:text-gray-300 italic ${
+                      language === 'te' ? 'font-telugu' : ''
+                    }`}>
+                      {language === 'en' 
+                        ? '"Murari Sharma is a true expert in Vedic astrology. His marriage compatibility analysis was spot on and helped us make the right decision for our daughter."'
+                        : '"మురారి శర్మ వేదిక జ్యోతిష్యంలో నిజమైన నిపుణుడు. ఆయన వివాహ అనుకూలత విశ్లేషణ చాలా ఖచ్చితంగా ఉంది మరియు మా కుమార్తెకు సరైన నిర్ణయం తీసుకోవడానికి సహాయపడింది."'
+                      }
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
-              >
-                <Send className="w-5 h-5 mr-2" />
-                {t('contact.message')}
-              </button>
-            </form>
+
+              {/* Testimonial 4 */}
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center mb-2">
+                      <h4 className={`text-lg font-semibold text-gray-900 dark:text-white ${
+                        language === 'te' ? 'font-telugu' : ''
+                      }`}>
+                        {language === 'en' ? 'Suresh Reddy' : 'సురేష్ రెడ్డి'}
+                      </h4>
+                      <div className="flex ml-2">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className={`text-gray-600 dark:text-gray-300 italic ${
+                      language === 'te' ? 'font-telugu' : ''
+                    }`}>
+                      {language === 'en' 
+                        ? '"The horoscope reading by Murari ji was incredibly detailed and accurate. His guidance helped me understand my life path better and make informed decisions."'
+                        : '"మురారి గారి జాతక పఠనం చాలా వివరంగా మరియు ఖచ్చితంగా ఉంది. ఆయన మార్గదర్శకత్వం నా జీవిత మార్గాన్ని బాగా అర్థం చేసుకోవడానికి మరియు సమాచారపూర్వక నిర్ణయాలు తీసుకోవడానికి సహాయపడింది."'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
