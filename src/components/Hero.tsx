@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             </p>
             
             {/* Social Media Icons */}
-            <div className="flex justify-center lg:justify-start space-x-4 mb-8">
+            <div className="flex justify-center lg:justify-start space-x-4">
               <a
                 href="https://www.facebook.com/profile.php?id=61577623463731"
                 target="_blank"
@@ -97,15 +97,6 @@ const Hero: React.FC = () => {
                 </svg>
               </a>
             </div>
-
-            {/* CTA Button */}
-            <a
-              href="#contact"
-              className="inline-flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors duration-200"
-            >
-              {t('contact.message')}
-              <ChevronDown className="ml-2 w-5 h-5" />
-            </a>
           </div>
         </div>
 
