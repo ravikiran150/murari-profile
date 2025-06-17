@@ -42,7 +42,9 @@ const Hero: React.FC = () => {
             {/* Social Media Icons */}
             <div className="flex justify-center lg:justify-start space-x-4 mb-8">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61577623463731"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors duration-200"
                 title="Facebook"
               >
@@ -51,7 +53,20 @@ const Hero: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/astro_murarisharma/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full flex items-center justify-center transition-colors duration-200"
+                title="Instagram"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.781c-.49 0-.875-.385-.875-.875s.385-.875.875-.875.875.385.875.875-.385.875-.875.875zm-7.83 11.781c-2.026 0-3.744-.807-5.097-2.16C2.549 14.895 1.742 13.177 1.742 11.151s.807-3.744 2.16-5.097c1.353-1.353 3.071-2.16 5.097-2.16s3.744.807 5.097 2.16c1.353 1.353 2.16 3.071 2.16 5.097s-.807 3.744-2.16 5.097c-1.353 1.353-3.071 2.16-5.097 2.16z"/>
+                </svg>
+              </a>
+              <a
+                href="https://x.com/Astromurarii"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-black hover:bg-gray-800 text-white rounded-full flex items-center justify-center transition-colors duration-200"
                 title="X (Twitter)"
               >
@@ -60,7 +75,9 @@ const Hero: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://wa.me/919966666391"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center transition-colors duration-200"
                 title="WhatsApp"
               >
@@ -70,6 +87,8 @@ const Hero: React.FC = () => {
               </a>
               <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-colors duration-200"
                 title="YouTube"
               >
