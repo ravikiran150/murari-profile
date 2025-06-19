@@ -20,6 +20,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.experience': 'Experience',
     'nav.skills': 'Skills',
     'nav.contact': 'Contact',
+    'nav.videos': 'Videos',
+    'nav.images': 'Images',
     
     // Hero Section
     'hero.name': 'Murari Sharma',
@@ -100,6 +102,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.experience': 'అనుభవం',
     'nav.skills': 'నైపుణ్యాలు',
     'nav.contact': 'సంప్రదించండి',
+    'nav.videos': 'వీడియోలు',
+    'nav.images': 'చిత్రాలు',
     
     // Hero Section
     'hero.name': 'మురారి శర్మ',

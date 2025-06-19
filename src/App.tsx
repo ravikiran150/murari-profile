@@ -10,23 +10,36 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Videos from './components/Videos';
+import Images from './components/Images';
 
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
         <div className="min-h-screen bg-white dark:bg-gray-900">
-          <Header />
-          <main className="pt-16">
-            <Hero />
-            <About />
-            <Education />
-            <Experience />
-            <Skills />
-            <Contact />
-          </main>
-          <Footer />
-          <Chatbot />
+          <BrowserRouter>
+            <Header />
+            <main className="pt-16">
+              <Routes>
+                <Route path="/" element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Education />
+                    <Experience />
+                    <Skills />
+                    <Contact />
+                  </>
+                } />
+                <Route path="/videos" element={<Videos />} />
+                <Route path="/images" element={<Images />} />
+              </Routes>
+            </main>
+            <Footer />
+            <Chatbot />
+          </BrowserRouter>
         </div>
       </LanguageProvider>
     </ThemeProvider>

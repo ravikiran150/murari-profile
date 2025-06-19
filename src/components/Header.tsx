@@ -3,18 +3,21 @@ import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { key: 'nav.home', href: '#home' },
+    { key: 'nav.home', href: '#home', to: '/' },
     { key: 'nav.about', href: '#about' },
     { key: 'nav.education', href: '#education' },
     { key: 'nav.experience', href: '#experience' },
     { key: 'nav.skills', href: '#skills' },
     { key: 'nav.contact', href: '#contact' },
+    { key: 'nav.videos', to: '/videos' },
+    { key: 'nav.images', to: '/images' },
   ];
 
   return (
@@ -31,13 +34,23 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              >
-                {t(item.key)}
-              </a>
+              item.to ? (
+                <Link
+                  key={item.key}
+                  to={item.to}
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  {t(item.key)}
+                </Link>
+              ) : (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  {t(item.key)}
+                </a>
+              )
             ))}
           </nav>
 
@@ -69,14 +82,25 @@ const Header: React.FC = () => {
           <div className="md:hidden border-t border-gray-200 dark:border-gray-700">
             <nav className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-                >
-                  {t(item.key)}
-                </a>
+                item.to ? (
+                  <Link
+                    key={item.key}
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                  >
+                    {t(item.key)}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                  >
+                    {t(item.key)}
+                  </a>
+                )
               ))}
             </nav>
           </div>
