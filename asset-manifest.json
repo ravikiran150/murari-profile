@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/murari-profile/static/css/main.22e8a530.css",
-    "main.js": "/murari-profile/static/js/main.bb9b3870.js",
+    "main.js": "/murari-profile/static/js/main.bad16b52.js",
     "static/js/453.780fbac5.chunk.js": "/murari-profile/static/js/453.780fbac5.chunk.js",
     "index.html": "/murari-profile/index.html",
     "main.22e8a530.css.map": "/murari-profile/static/css/main.22e8a530.css.map",
-    "main.bb9b3870.js.map": "/murari-profile/static/js/main.bb9b3870.js.map",
+    "main.bad16b52.js.map": "/murari-profile/static/js/main.bad16b52.js.map",
     "453.780fbac5.chunk.js.map": "/murari-profile/static/js/453.780fbac5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.22e8a530.css",
-    "static/js/main.bb9b3870.js"
+    "static/js/main.bad16b52.js"
   ]
 }
