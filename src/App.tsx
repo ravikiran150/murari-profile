@@ -10,7 +10,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Videos from './components/Videos';
 import Images from './components/Images';
 
@@ -35,6 +35,7 @@ function App() {
                 } />
                 <Route path="/videos" element={<Videos />} />
                 <Route path="/images" element={<Images />} />
+                <Route path="/murari-profile" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
             <Footer />
