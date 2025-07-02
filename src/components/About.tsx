@@ -8,7 +8,7 @@ const About: React.FC = () => {
   const features = [
     {
       icon: <User className="w-8 h-8" />,
-      title: language === 'en' ? '15+ Years Experience' : '12+ సంవత్సరాల అనుభవం',
+      title: language === 'en' ? '15+ Years Experience' : '15+ సంవత్సరాల అనుభవం',
       description: language === 'en' ? 'Extensive experience in Hindu rituals and ceremonies' : 'హిందూ ఆచారాలు మరియు వేడుకలలో విస్తృత అనుభవం'
     },
     {
