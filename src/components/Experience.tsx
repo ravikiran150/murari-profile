@@ -102,7 +102,7 @@ const Experience: React.FC = () => {
             <h3 className={`text-2xl font-bold text-gray-900 dark:text-white mb-4 ${
               language === 'te' ? 'font-telugu' : ''
             }`}>
-              {language === 'en' ? '12+ Years of Dedicated Service' : '12+ సంవత్సరాల అంకిత సేవ'}
+              {language === 'en' ? '15+ Years of Dedicated Service' : '15+ సంవత్సరాల అంకిత సేవ'}
             </h3>
             <p className={`text-lg text-gray-600 dark:text-gray-300 ${
               language === 'te' ? 'font-telugu' : ''
